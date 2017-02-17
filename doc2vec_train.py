@@ -26,7 +26,7 @@ if len(sys.argv) >= 3:
 	modelfile = sys.argv[2]
 else:
 	inputfile = "./data/sample.txt"
-	modelfile = "doc2vec.model"
+	modelfile = "./model/doc2vec.model"
 
 word2vec_file = modelfile + ".word2vec_format"
 
