@@ -11,6 +11,9 @@ Raw Corpus
 
 PreTrained Doc2vec Model
 ==========================
+* [Korean Wikipedia / mecab pos tokenizer / no tag info / 30 vectors(dmpv)](https://drive.google.com/open?id=0B9-yFnYCRJ-WUnpfYnd0S2Y1ZXM)
+* [Korean Wikipedia / mecab pos tokenizer / no tag info / 100 vectors(dmpv)](https://drive.google.com/open?id=0B9-yFnYCRJ-WZTBDNE5odGN5a0U)
+* [Korean Wikipedia / mecab pos tokenizer / no tag info / 300 vectors(dmpv)](https://drive.google.com/open?id=0B9-yFnYCRJ-WQlpUTk9wRDJ0d2c)
 * [Korean Wikipedia / mecab pos tokenizer / no tag info / 1000 vectors(dmpv)](https://drive.google.com/open?id=0B9-yFnYCRJ-WSHB4TTBfb2I4REE)
 
 
