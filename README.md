@@ -20,13 +20,15 @@ PreTrained Doc2vec Model
 * [Korean Wikipedia / mecab pos tokenizer / no tag info / 300 vectors(dmpv)](https://drive.google.com/open?id=0B9-yFnYCRJ-WQlpUTk9wRDJ0d2c)
 * [Korean Wikipedia / mecab pos tokenizer / no tag info / 1000 vectors(dmpv)](https://drive.google.com/open?id=0B9-yFnYCRJ-WSHB4TTBfb2I4REE)
 
-Demo Site
-* [korean word2vec demo site](http://stockprediction.co.kr/word2vec/)
 
 Korean word2vec-api
 ============
 
 Simple web service providing a word embedding API. The methods are based on Gensim Word2Vec implementation. Models are passed as parameters and must be in the Word2Vec text or binary format. This web2vec-api script is forked from [this word2vec-api github](https://github.com/3Top/word2vec-api) and get minor update to support Korean word2vec models.  
+
+* Install Dependencies
+```
+pip2 install -r requirements.txt
 
 * Launching the service
 ```
