@@ -15,7 +15,7 @@ if __name__ == '__main__':
 	modelname = sys.argv[1]
 	model = gensim.models.Doc2Vec.load(modelname)
 	print "정조와 가장 비슷한 단어들"
-	pprint(model.most_similar(u'정조', topn=20))
+	pprint(model.most_similar(u'과징금', topn=20))
 	print "배당과 비슷한 단어들"
 	pprint(model.most_similar(u'배당', topn=20))
 	print "왕 - 남자 + 여자 = 여왕"
