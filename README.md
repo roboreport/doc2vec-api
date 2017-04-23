@@ -29,6 +29,7 @@ Simple web service providing a word embedding API. The methods are based on Gens
 * Install Dependencies
 ```
 pip2 install -r requirements.txt
+```
 
 * Launching the service
 ```
