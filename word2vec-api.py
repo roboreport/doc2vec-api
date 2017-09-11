@@ -1,20 +1,27 @@
 #-*- coding: utf-8 -*-
 
 '''
-Simple web service wrapping a Word2Vec as implemented in Gensim
+Simple web service wrapping a Word2Vec/Doc2Vec as implemented in Gensim
 Example call: curl http://127.0.0.1:5000/wor2vec/n_similarity/ws1=Sushi&ws1=Shop&ws2=Japanese&ws2=Restaurant
 '''
 
 from flask import Flask, request, jsonify
 from flask.ext.restful import Resource, Api, reqparse
-from gensim.models.word2vec import Word2Vec as w
+#`from gensim.models.word2vec import Word2Vec as w
+from gensim.models.doc2vec import Doc2Vec as w
 from gensim import utils, matutils
 from numpy import exp, dot, zeros, outer, random, dtype, get_include, float32 as REAL,\
      uint32, seterr, array, uint8, vstack, argsort, fromstring, sqrt, newaxis, ndarray, empty, sum as np_sum
+from konlpy.tag import Mecab
 import cPickle
 import argparse
 import base64
 import sys
+import logging
+import logging.handlers
+
+
+
 
 
 reload(sys)
@@ -23,26 +30,73 @@ sys.setdefaultencoding('utf-8')
 parser = reqparse.RequestParser()
 
 
+
+# 로거 인스턴스를 만든다
+logger = logging.getLogger('mylogger')
+
+# 포매터를 만든다
+fomatter = logging.Formatter('[%(levelname)s|%(filename)s:%(lineno)s] %(asctime)s > %(message)s')
+
+# 스트림과 파일로 로그를 출력하는 핸들러를 각각 만든다.
+fileHandler = logging.FileHandler('./word2vec-api.log')
+
+# 각 핸들러에 포매터를 지정한다.
+fileHandler.setFormatter(fomatter)
+
+# 로거 인스턴스에 스트림 핸들러와 파일핸들러를 붙인다.
+logger.addHandler(fileHandler)
+
+logger.setLevel(logging.DEBUG)
+
 def filter_words(words):
     if words is None:
         return
     return [word.decode('utf-8') for word in words if word.decode('utf-8') in model.vocab]
 
+def tokenize(sentence):
+    tagger = Mecab()
+    logger.debug(sentence)
+    s= " ".join(tagger.morphs(sentence))
+    logger.debug("tokenized:" + s)
+    return s
+
 
 class N_Similarity(Resource):
     def get(self):
         parser = reqparse.RequestParser()
-        parser.add_argument('ws1', type=str, required=True, help="Word set 1 cannot be blank!", action='append')
-        parser.add_argument('ws2', type=str, required=True, help="Word set 2 cannot be blank!", action='append')
+        parser.add_argument('doc1', type=str, required=True, help="Word set 1 cannot be blank!", action='append')
+        parser.add_argument('doc2', type=str, required=True, help="Word set 2 cannot be blank!", action='append')
         args = parser.parse_args()
-        return model.n_similarity(filter_words(args['ws1']),filter_words(args['ws2']))
+	ws1_tokens = tokenize(args['doc1'][0])
+	ws2_tokens = tokenize(args['doc2'][0])
+        return model.n_similarity(ws1_tokens.split(' '), ws2_tokens.split(' '))
+
+
+
+
+class DocSimilarity(Resource):
+    def get(self):
+        parser = reqparse.RequestParser()
+        parser.add_argument('doc1', type=str, required=True, help="Document 1 cannot be blank!", action='append')
+        parser.add_argument('doc2', type=str, required=True, help="Document 2 cannot be blank!", action='append')
+        args = parser.parse_args()
+        doc1sens = tokenize(args['doc1'][0])
+        doc2sens = tokenize(args['doc2'][0])
+	try:
+		logger.info(model.n_similarity(doc1sens.split(' '), doc2sens.split(' ')))
+        except Exception, e:
+	    print e 
+
+	return model.docvecs.similarity_unseen_docs(model, doc1sens.split(' '), doc2sens.split(' '))
+
+
 
 
 class Similarity(Resource):
     def get(self):
         parser = reqparse.RequestParser()
-        parser.add_argument('w1', type=str, required=True, help="Word 1 cannot be blank!")
-        parser.add_argument('w2', type=str, required=True, help="Word 2 cannot be blank!")
+        parser.add_argument('w1', type=str, required=True, help="document 1 cannot be blank!")
+        parser.add_argument('w2', type=str, required=True, help="document 2 cannot be blank!")
         args = parser.parse_args()
         return model.similarity(args['w1'], args['w2'])
 
@@ -50,29 +104,55 @@ class Similarity(Resource):
 class MostSimilar(Resource):
     def get(self):
         parser = reqparse.RequestParser()
-        parser.add_argument('positive', type=str, required=False, help="Positive words.", action='append')
-	parser.add_argument('negative', type=str, required=False, help="Negative words.", action='append')
+        try:
+           parser.add_argument('positive', type=str, required=False, help="Positive words.", action='append')
+        except Exception, e:
+           print e
+
+        parser.add_argument('negative', type=str, required=False, help="Negative words.", action='append')
         parser.add_argument('topn', type=int, required=False, help="Number of results.")
-	try:
-            args = parser.parse_args()
-            pos = filter_words(args.get('positive', []))
-	except Exception, e:
-	    print e
+        try:
+           args = parser.parse_args()
+           pos = filter_words(args.get('positive', []))
+        except Exception, e:
+           print e
+
         neg = filter_words(args.get('negative', []))
         t = args.get('topn', 10)
         pos = [] if pos == None else pos
         neg = [] if neg == None else neg
         t = 10 if t == None else t
-        print "positive: " + str(pos) + " negative: " + str(neg) + " topn: " + str(t)
+        queryinfo = "positive: " + str(pos) + " negative: " + str(neg) + " topn: " + str(t)
+        logger.info(queryinfo)
+        logger.info("pos 0:"+ pos[0])
+
         try:
-            res = model.most_similar_cosmul(positive=pos,negative=neg,topn=t)
-	    print res
-	    res = [word[0].encode('utf-8') for word in res]
-            return res
+           ress = model.most_similar_cosmul(positive=pos,negative=neg,topn=t)
+           logger.info(ress)
+           res = [word[0].encode('utf-8') for word in ress]
+           logger.info(type(res))
+           return res
+        except Exception, e:
+           print e
+           print res
+
+class Infer(Resource):
+    def get(self):
+        parser = reqparse.RequestParser()
+        parser.add_argument('words', type=str, required=True, help="word to infer vector.")
+        args = parser.parse_args()
+        logger.info(args['words'])
+        try:
+            newsline = tokenize(args['words'])
+            logger.info(newsline)
+            ress = model.infer_vector(newsline.split(' '))
+            logger.info(ress)
+            res = ress.tolist()
+            return res 
         except Exception, e:
             print e
-            print res
-
+            return
+ 
 
 class Model(Resource):
     def get(self):
@@ -132,10 +212,12 @@ if __name__ == '__main__':
     port = int(args.port) if args.port else 5000
     if not args.model:
         print "Usage: word2vec-apy.py --model path/to/the/model [--host host --port 1234]"
-    model = w.load_word2vec_format(model_path, binary=binary)
+    model = w.load(model_path)
+
     api.add_resource(N_Similarity, path+'/n_similarity')
     api.add_resource(Similarity, path+'/similarity')
     api.add_resource(MostSimilar, path+'/most_similar')
     api.add_resource(Model, path+'/model')
+    api.add_resource(Infer, path+'/infer')
     api.add_resource(ModelWordSet, '/word2vec/model_word_set')
     app.run(host=host, port=port)
