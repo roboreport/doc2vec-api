@@ -1,0 +1,40 @@
+{
+  "id": "478df1e8-b09f-4ac3-97f9-2eb718a08da1",
+  "name": "interestrate",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "주택담보대출금리",
+      "synonyms": [
+        "주택담보대출금리",
+        "주택 담보 대출 금리"
+      ]
+    },
+    {
+      "value": "금리",
+      "synonyms": [
+        "금리"
+      ]
+    },
+    {
+      "value": "기준금리",
+      "synonyms": [
+        "기준금리"
+      ]
+    },
+    {
+      "value": "담보 대출 금리",
+      "synonyms": [
+        "담보 대출 금리"
+      ]
+    },
+    {
+      "value": "콜금리",
+      "synonyms": [
+        "콜금리"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}

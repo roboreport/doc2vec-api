@@ -1,0 +1,46 @@
+{
+  "id": "ab4ff2b5-cf00-4ea3-8c39-4ef3bc09822e",
+  "name": "moneytype",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "전세가",
+      "synonyms": [
+        "전세가",
+        "전세 가격",
+        "전세가격",
+        "전세"
+      ]
+    },
+    {
+      "value": "실거래가",
+      "synonyms": [
+        "실거래가",
+        "매매가"
+      ]
+    },
+    {
+      "value": "보증금",
+      "synonyms": [
+        "보증금"
+      ]
+    },
+    {
+      "value": "월세가",
+      "synonyms": [
+        "월세가",
+        "월세가격",
+        "월세 가격",
+        "월세"
+      ]
+    },
+    {
+      "value": "시세",
+      "synonyms": [
+        "시세"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}

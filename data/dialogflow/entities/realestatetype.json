@@ -1,0 +1,46 @@
+{
+  "id": "40add77e-8458-4c18-a7b3-6f62f1cae28b",
+  "name": "realestatetype",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "단독주택",
+      "synonyms": [
+        "단독주택",
+        "주택"
+      ]
+    },
+    {
+      "value": "상가",
+      "synonyms": [
+        "상가"
+      ]
+    },
+    {
+      "value": "오피스텔",
+      "synonyms": [
+        "오피스텔"
+      ]
+    },
+    {
+      "value": "아파트",
+      "synonyms": [
+        "아파트"
+      ]
+    },
+    {
+      "value": "빌라",
+      "synonyms": [
+        "빌라"
+      ]
+    },
+    {
+      "value": "토지",
+      "synonyms": [
+        "토지"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}

@@ -1,0 +1,27 @@
+{
+  "id": "c57c42f2-76db-4ee2-87f5-34396e23aae7",
+  "name": "schooltype",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "중학교",
+      "synonyms": [
+        "중학교"
+      ]
+    },
+    {
+      "value": "고등학교",
+      "synonyms": [
+        "고등학교"
+      ]
+    },
+    {
+      "value": "초등학교",
+      "synonyms": [
+        "초등학교"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}

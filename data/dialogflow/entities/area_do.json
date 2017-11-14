@@ -1,0 +1,45 @@
+{
+  "id": "d28d1539-656d-4c57-93d8-dbd969662032",
+  "name": "area_do",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "충청북도",
+      "synonyms": [
+        "충청북도"
+      ]
+    },
+    {
+      "value": "전라북도",
+      "synonyms": [
+        "전라북도"
+      ]
+    },
+    {
+      "value": "충청남도",
+      "synonyms": [
+        "충청남도"
+      ]
+    },
+    {
+      "value": "경기도",
+      "synonyms": [
+        "경기도"
+      ]
+    },
+    {
+      "value": "전라남도",
+      "synonyms": [
+        "전라남도"
+      ]
+    },
+    {
+      "value": "강원도",
+      "synonyms": [
+        "강원도"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}

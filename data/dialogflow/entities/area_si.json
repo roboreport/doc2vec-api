@@ -1,0 +1,73 @@
+{
+  "id": "cb7df9e0-dc2e-4c9c-ade8-d707e2c52aec",
+  "name": "area_si",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "울산광역시",
+      "synonyms": [
+        "울산광역시",
+        "울산시",
+        "울산"
+      ]
+    },
+    {
+      "value": "인천광역시",
+      "synonyms": [
+        "인천광역시",
+        "인천시",
+        "인천"
+      ]
+    },
+    {
+      "value": "부산광역시",
+      "synonyms": [
+        "부산광역시",
+        "부산시",
+        "부산"
+      ]
+    },
+    {
+      "value": "대구광역시",
+      "synonyms": [
+        "대구광역시",
+        "대구시",
+        "대구"
+      ]
+    },
+    {
+      "value": "광주광역시",
+      "synonyms": [
+        "광주광역시",
+        "광주시",
+        "광주"
+      ]
+    },
+    {
+      "value": "세종특별자치시",
+      "synonyms": [
+        "세종특별자치시",
+        "세종시",
+        "세종"
+      ]
+    },
+    {
+      "value": "서울특별시",
+      "synonyms": [
+        "서울특별시",
+        "서울시",
+        "서울"
+      ]
+    },
+    {
+      "value": "대전광역시",
+      "synonyms": [
+        "대전광역시",
+        "대전시",
+        "대전"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}
