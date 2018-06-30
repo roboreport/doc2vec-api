@@ -5,7 +5,7 @@ The repository contains some corpus(Korean), python scripts for training and inf
 
 Demo Site
 =============
-* [korean word2vec/doc2vec demo site](http://stockprediction.co.kr/word2vec/)
+* [korean word2vec/doc2vec demo site](http://121.78.145.40/word2vec/)
 
 Raw Corpus
 =============
