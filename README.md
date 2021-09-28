@@ -9,9 +9,9 @@ Demo Site
 
 Raw Corpus
 =============
-* [Korean Wikipedia / space tokenizer (467MB)](https://drive.google.com/open?id=0B38stK5a3ByqcGhuUE93YnIxN0U)
-* [Korean Wikipedia / mecab pos tokenizer / tag info (910MB)](https://drive.google.com/open?id=0B38stK5a3ByqZWRxS2lWMkhqQ2c)
-* [Korean Wikipedia / mecab pos tokenizer / no tag info (535MB)](https://drive.google.com/open?id=0B38stK5a3ByqQWtBZ1pQWjFvWlU)
+* [Korean Wikipedia / space tokenizer (467MB)](https://drive.google.com/file/d/0B38stK5a3ByqcGhuUE93YnIxN0U/view?resourcekey=0-YfafP3hxayjxBBXpy5RIsA)
+* [Korean Wikipedia / mecab pos tokenizer / tag info (910MB)](https://drive.google.com/file/d/0B38stK5a3ByqZWRxS2lWMkhqQ2c/view?usp=sharing&resourcekey=0-c7VTtwcwcxapPrKSwYwivg)
+* [Korean Wikipedia / mecab pos tokenizer / no tag info (535MB)](https://drive.google.com/file/d/0B38stK5a3ByqQWtBZ1pQWjFvWlU/view?usp=sharing&resourcekey=0-F__wBgRZg1nn6oJ5DUVbaw)
 
 PreTrained Doc2vec Model
 =============
