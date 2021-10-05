@@ -15,13 +15,13 @@ Raw Corpus
 
 PreTrained Doc2vec Model
 =============
-* [Korean Wikipedia / mecab pos tokenizer / no tag info / 30 vectors(dmpv)](https://drive.google.com/open?id=0B9-yFnYCRJ-WUnpfYnd0S2Y1ZXM)
-* [Korean Wikipedia / mecab pos tokenizer / no tag info / 100 vectors(dmpv)](https://drive.google.com/open?id=0B9-yFnYCRJ-WZTBDNE5odGN5a0U)
-* [Korean Wikipedia / mecab pos tokenizer / no tag info / 300 vectors(dmpv)](https://drive.google.com/open?id=0B9-yFnYCRJ-WQlpUTk9wRDJ0d2c)
-* [Korean Wikipedia / mecab pos tokenizer / no tag info / 1000 vectors(dmpv)](https://drive.google.com/open?id=0B9-yFnYCRJ-WSHB4TTBfb2I4REE)
+* [Korean Wikipedia / mecab pos tokenizer / no tag info / 30 vectors(dmpv)](https://drive.google.com/file/d/0B9-yFnYCRJ-WUnpfYnd0S2Y1ZXM/view?usp=sharing&resourcekey=0-U3GKEwNwWH5Q3yEHi7sNxA)
+* [Korean Wikipedia / mecab pos tokenizer / no tag info / 100 vectors(dmpv)](https://drive.google.com/file/d/0B9-yFnYCRJ-WZTBDNE5odGN5a0U/view?usp=sharing&resourcekey=0-pvmWQI-mgH4XWMVX3ZMg5g)
+* [Korean Wikipedia / mecab pos tokenizer / no tag info / 300 vectors(dmpv)](https://drive.google.com/file/d/0B9-yFnYCRJ-WQlpUTk9wRDJ0d2c/view?usp=sharing&resourcekey=0-w88xtciCgmp4PcBKKjUwgw)
+* [Korean Wikipedia / mecab pos tokenizer / no tag info / 1000 vectors(dmpv)](https://drive.google.com/file/d/0B9-yFnYCRJ-WSHB4TTBfb2I4REE/view?usp=sharing&resourcekey=0-TQ3rTx-aIVGiNy6eS5YdHw)
 
-* [Korean Wikipedia + financial news / mecab pos tokenizer / no tag info / 30 vectors(dmpv)](https://drive.google.com/open?id=0B38stK5a3ByqZE1Wa3VGQlhJVFk)
-* [Korean Wikipedia + financial news / mecab pos tokenizer / no tag info / 100 vectors(dmpv)](https://drive.google.com/open?id=0B38stK5a3ByqSUFEQ3ktUlRRaWc)
+* [Korean Wikipedia + financial news / mecab pos tokenizer / no tag info / 30 vectors(dmpv)](https://drive.google.com/file/d/0B38stK5a3ByqZE1Wa3VGQlhJVFk/view?usp=sharing&resourcekey=0-Wc-yDyGR_4RtUeDwg3hS9w)
+* [Korean Wikipedia + financial news / mecab pos tokenizer / no tag info / 100 vectors(dmpv)](https://drive.google.com/file/d/0B38stK5a3ByqSUFEQ3ktUlRRaWc/view?usp=sharing&resourcekey=0-eH9X8wwz9qu54uala6S2kA)
 
 
 Korean word2vec-api / doc2vec-api
